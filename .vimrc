@@ -41,16 +41,17 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " UNCOMMENT TO USE
-"set tabstop=2                    " Global tab width.
-"set shiftwidth=2                 " And again, related.
-"set expandtab                    " Use spaces instead of tabs
+set tabstop=4                     " Global tab width.
+set shiftwidth=4                  " And again, related.
+set expandtab                     " Use spaces instead of tabs
+set smarttab                      " Use the siftwidth to backspace when deleting tabs
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Or use vividchalk
-colorscheme topfunky-light
+colorscheme peachpuff
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -81,5 +82,3 @@ map <leader>tm :tabmove
 autocmd BufNewFile,BufRead *_spec.rb compiler rspec
 
 let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
-set tabstop=4
-set expandtab
